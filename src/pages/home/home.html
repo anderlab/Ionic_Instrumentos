@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Lista de instrumentos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- Lista -->
+  <ion-list>
+    <!-- Hacemos un for que muestra intrumento por instrumento incluyendo el metodo enviarA que nos manda a info.html para mostrarnos el nombre , descirpcion  e imagen del instrumento--> 
+    <button ion-item *ngFor="let instrumento of instrumentos" (click)="enviarA(instrumento)">
+      {{ instrumento.nombre }}
+    </button> 
+  </ion-list>
+
+
+
+    <!--Un boton que llama al metodo doPrompt() que saca un alert para introductir un nuevo instrumento-->
+   <button ion-button color="primary" block (click)="doPrompt()">Añadir un instrumento</button>
+</ion-content>
